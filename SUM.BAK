@@ -1,0 +1,14 @@
+void main()
+{
+ float a,b,c;
+ printf("program for sum of two numbers \n");
+ printf("enter first number \n");
+ scanf("%f",&a);
+ printf("enter second number \n");
+ scanf("%f",&b);
+ c=a+b;
+ printf("sum is %f",c);
+ getch();
+ clrscr();
+
+}
