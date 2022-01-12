@@ -1,0 +1,93 @@
+#include<stdio.h>
+#include<conio.h>
+ struct node
+ {
+  int a;
+  };
+ struct *node,left,right;
+ struct node *create(struct node *t,int a);
+ void preorder(struct node*t);
+ void inorder(struct node*t);
+ void postorder(struct node*t);
+ struct node*create(struct node*t,int x)
+ {
+ if(t==NULL)
+ {
+t=(struct node*)malloc(sizeof(struct node));
+ t->a=x;
+ t->left=NULL;
+ t->right=NULL;
+ }
+ else if(x<t->a)
+ t->left=create(t->left,x);
+ else if(x>t->a)
+ t->right=create(t->right,x);
+ else if(x==t->a)
+     print("duplicate data");
+   return(t);
+   }
+   void preorder(struct node*t)
+   {  if(t!=NULL)
+     {
+     printf("%d",,t->a);
+     preorder(t->left);
+     preorder(t->right);
+     }
+    }
+    void inorder(struct node*t)
+    {
+    if(t!=NULL)
+    {
+    inorder(t->left);
+    printf("%d",t->a);
+    inorder(t->right);
+    }
+    }
+	  void postorder(struct node*t)
+	  {
+	  if(t!=NULL)
+	  {
+	  postorder(t->left);
+	  postordr(t->right);
+	  printf("%d",t->a);
+	  }
+	}
+	void main()
+	{
+	int x,ch;
+	char s;
+	clrscr();
+	printf("menu:\n 1.create\n 2.preorder\n 3.inorder\n 4.postorder\n");
+	printf("enter your choice:");
+	scanf("%d",&ch);
+	do
+	{
+	switch(ch)
+	{
+	case 1:printf("enter -1 to stop");
+	scanf("%d",&x);
+	while(x !=-1)
+	{
+	   t=created(t,x);
+	   scanf("%d",&x);
+	   }
+	   break;
+	   case 2: printf("\n preorder traversal:");
+	   preorder(t);
+	   break;
+	   case 3: printf("\norder traversal:");
+	   inorder(t);
+	   break;
+	   case 4:printf("\n postorder traversal:");
+	   postorder(t);
+	   default:printf("\n wrong choice\n");
+	   break;
+	   }
+	   printf("\nenter your choice:");
+	   scanf("%d",&ch);
+	   }
+	   while(ch<5);
+	   getch();
+	   }
+
+
